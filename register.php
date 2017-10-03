@@ -25,7 +25,7 @@
         <input type="text" id="inputText" class="form-control" placeholder="username" required autofocus name="username">
         <input type="email" id="inputEmail" class="form-control" placeholder="email address" required autofocus name="email">
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="password">
-        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit1">Register</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit1">Next</button>
       </form>
 
     </div> 
@@ -40,7 +40,7 @@
         {
             insertUser();
             createTable();
-         header("Location:profile.php");
+        // header("Location:profile.php");     
         }
             else
         echo" <center>username unavailable<center>";

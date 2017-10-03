@@ -1,6 +1,5 @@
 <?php include "db.php";
 
-
 function login()
 {
     global $connection,$result;
@@ -49,6 +48,16 @@ function createTable()
     else
         echo "live";
     
+}
+function readTable()
+{
+    global $connection,$result;
+    $query="SELECT *FROM USERS";
+
+    $result=mysqli_query($connection,$query);
+ if(!$result){
+     die('Query Failed'.mysqli_error());
+ }
 }
 function checkUser()
 {

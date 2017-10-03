@@ -12,9 +12,9 @@
     
     <link href="css/signin.css" rel="stylesheet">
     <link rel="stylesheet" href="css/tabs.css">
-    <link rel="stylesheet" href="css/tabs.css">
     <script src="js/tabs.js"></script>
-  </head>
+   
+
 
   <body>
   <br>
@@ -22,7 +22,8 @@
 
 <br>
 <br>
-<div class="container "><div class="tab">
+          
+<div class="container form-tab"><div class="tab">
           <button class="tablinks" onclick="openCity(event, 'Create')">Create</button>
           <button class="tablinks" onclick="openCity(event, 'Read')">Read</button>
           <button class="tablinks" onclick="openCity(event, 'Modify')">Modify</button>
@@ -36,8 +37,19 @@
           <p>Create a new file:</p>
           <form action="" method="post">
               <input type="text" name="fname" placeholder="enter the file name you want to create">
-              <input type="submit" name="submit" class="btn" >Create
+              <input type="submit" name="submit" class="btn" onclick="submit();">Create
           </form>
+          <script type="text/javascript">
+$(document).ready(function(){
+	$('a[class="tablinks"]').on('show.bs.tab', function(e) {
+		localStorage.setItem('activeTab', $(e.target).attr('href'));
+	});
+	var activeTab = localStorage.getItem('activeTab');
+	if(activeTab){
+		$('#myTab a[href="' + activeTab + '"]').tab('show');
+	}
+});
+</script>
 
           <?php
             if(isset($_POST['submit']))
